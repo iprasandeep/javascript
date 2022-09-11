@@ -1,21 +1,49 @@
 // DOM Manipulation
 
 
-// get Element By Id()
+// const title  = document.querySelector('#main-heading');
 
-const title = document.getElementById('main-heading');
-console.log(title);
+// title.style.color = 'yellow';
 
-// getelementByclassname()
-
-const listItems = document.getElementsByTagName('li');
-
-console.log(listItems);
+// const listItems = document.querySelectorAll('list-items');
 
 
-const container =document.querySelectorAll('div');
-
-console.log(container);
+// for(i =0; i<listItems.length; i++)
+// {
+//     listItems[i].style.fontSize = '5rem';
+// }
+// console.log(listItems);
 
 
 
+
+// creating elements
+
+const ul = document.querySelector('ul');
+const li = document.createElement('li');
+
+// Adding elements
+ul.append(li)
+
+// modifying text
+// const firstlistitems = document.querySelector('.list-item');
+
+// console.log(firstlistitems.innerText);
+// console.log(firstlistitems.textContent);
+// console.log(firstlistitems.innerHTML)
+
+
+li.innerText = 'X-men';
+
+li.classList.add('list-item');
+console.log(li.classList.contains('list-item'));
+//remove elements
+li.remove();
+
+// // Modifying Attributes and Classes
+// li.setAttribute('id', 'main-heading');
+// li.removeAttribute('id');
+
+// const title = document.querySelector('main-heading');
+
+// console.log(title.getAttribute('id'));
