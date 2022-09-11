@@ -182,29 +182,74 @@ let stocks = {
     toppings: ["chocolates", "penuts"]
 };
 
-let is_shop_open = true;
+let is_shop_open = false;
 
-let topping_choice = () =>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(() => {
-            resolve(
-                console.log("which topping would you love ?")
-            )
-        }, 3000);
-    });
-};
+// let topping_choice = () =>{
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(() => {
+//             resolve(
+//                 console.log("which topping would you love ?")
+//             )
+//         }, 3000);
+//     });
+// };
 
-async function kitchen()
+// async function kitchen()
+// {
+//     console.log(" A ");
+//     console.log(" B ");
+//     console.log(" C ");
+
+//     await topping_choice()
+//     console.log(" D ");
+//     console.log(" E ");
+// }
+// kitchen();
+// console.log("cleaning the dishes");
+// console.log("cleaning the tables");
+// console.log("taking others order!");
+
+function time(ms)
 {
-    console.log(" A ");
-    console.log(" B ");
-    console.log(" C ");
+    return new Promise((resolve, reject)=>{
+        if(is_shop_open)
+        {
+           setTimeout(resolve, ms)
+        }
+        else {
+            reject(console.log("Shop is closed!"));
+        }
+    });
+}
 
-    await topping_choice()
-    console.log(" D ");
-    console.log(" E ");
+async function kitchen ()
+{
+    try{
+        await time(2000)
+        console.log(`${stocks.Fruits[0]} was selected!`);
+        await time(0000);
+        console.log("start the production!");
+        await time(2000);
+        console.log("cut the fruit");
+
+        await time(1000)
+        console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added!`)
+        
+        await time(1000);
+        console.log("start the machine");
+        await time(2000);
+        console.log(` ice cream placed on ${stocks.holder[0]}`);
+        await time(3000);
+        console.log(`${stocks.toppings[0]} was selected`);
+        await time(2000);
+        console.log("serve ice cream");
+    }
+    catch(error){
+        console.log("customer left", error);
+    }
+    finally{
+        console.log("day ended, shop is closed!");
+    }
 }
 kitchen();
-console.log("cleaning the dishes");
-console.log("cleaning the tables");
-console.log("taking others order!");
+
