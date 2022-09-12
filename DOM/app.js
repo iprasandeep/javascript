@@ -19,11 +19,11 @@
 
 // creating elements
 
-const ul = document.querySelector('ul');
-const li = document.createElement('li');
+// const ul = document.querySelector('ul');
+// const li = document.createElement('li');
 
-// Adding elements
-ul.append(li)
+// // Adding elements
+// ul.append(li)
 
 // modifying text
 // const firstlistitems = document.querySelector('.list-item');
@@ -33,12 +33,12 @@ ul.append(li)
 // console.log(firstlistitems.innerHTML)
 
 
-li.innerText = 'X-men';
+// li.innerText = 'X-men';
 
-li.classList.add('list-item');
-console.log(li.classList.contains('list-item'));
-//remove elements
-li.remove();
+// li.classList.add('list-item');
+// console.log(li.classList.contains('list-item'));
+// //remove elements
+// li.remove();
 
 // // Modifying Attributes and Classes
 // li.setAttribute('id', 'main-heading');
@@ -47,3 +47,10 @@ li.remove();
 // const title = document.querySelector('main-heading');
 
 // console.log(title.getAttribute('id'));
+
+
+let ul = document.querySelector('ul');
+const div  =document.querySelector('div');
+
+console.log(ul.previousElementSibling);
+console.log(ul.nextElementSibling);
